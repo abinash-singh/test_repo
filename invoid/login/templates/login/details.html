@@ -1,0 +1,125 @@
+{% load staticfiles %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>inVOID</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png' %}"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<style type="text/css">
+  .nav.bg-nav{
+    padding: 10px 0px 10px 0px;
+    background: #fff;
+    border-bottom: 1px solid #366dd2;
+  }
+  .forTableStyle table{
+    background: #fff;
+    font-size: 14px;
+  }
+  .forTableStyle thead{
+    background: #366dd2;
+    color: #fff;
+  }
+  .forTableStyle tr th{
+    padding: 10px;
+    text-transform: capitalize;
+  }
+  .forTableStyle tr td{
+    padding: 6px 10px;
+  }
+  .right{
+    float: right;
+  }
+  .left{
+    float: left;
+  }
+  .logout{
+    color: #000;
+    padding-top: 5px;
+  }
+  .logout:hover{
+    color: #366dd2;
+  }
+</style>
+<body>
+<header>
+  <div class="nav bg-nav">
+    <div class="nav-wapper container">
+          <img src="{% static 'images/logo.png' %}" width="100px">
+          <a href="{% url 'login:logout' %}" class="right logout">Logout <span><i class="fa fa-sign-out" aria-hidden="true"></i></span></a>
+    </div>
+  </div>
+</header>
+  <div class="limiter">
+    <div class="container-login100" style="align-items: normal; background-image: url('{% static 'images/bg-01.jpg' %}');">
+      <div class="container forTableStyle">
+        <table class="table table-bordered">
+          <thead>
+              <tr>
+                <th>transaction_id</th>
+                <th>utc_timestamp</th>
+                <th>primary_id_file</th>
+                <th>auth_key</th>
+                <th>name</th>
+                <th>phone_number</th>
+              </tr>
+            </thead>
+          {% for i in message %}
+          <tr>
+            <td>{{ i.transaction_id }}</td>
+            <td>{{ i.utc_timestamp }}</td>
+            <td>{{ i.primary_id_file }}</td>
+            <td>{{ i.auth_key }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.phone_number }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="dropDownSelect1"></div>
+  
+<!--===============================================================================================-->
+  <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+  <script src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
