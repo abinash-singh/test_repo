@@ -12,6 +12,8 @@ from django.utils.datastructures import MultiValueDictKeyError
 from django.conf import settings
 # Create your views here.
 
+test = 10
+
 client = MongoClient("mongodb+srv://abinash-singh:gayatree%40123@cluster0-t2gln.mongodb.net/test?retryWrites=true")
 #client = MongoClient('mongodb+srv://invoid:invoid1404@invoid-9snlk.mongodb.net/test?retryWrites=true')
 mongodb = client.video_kyc_demo
